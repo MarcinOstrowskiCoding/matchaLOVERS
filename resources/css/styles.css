@@ -10,6 +10,8 @@
     --accent_dark: #803D15;
     --accent_deep_dark: #552100;
     --background_black_opacity_40: #00000066;
+    --background_staff_opacity_40: #5521003f;
+    --background_staff_opacity_60: #5521006b;
 }
 
 html {
@@ -157,42 +159,7 @@ h2 {
     border-bottom: 1px solid var(--deep_dark);
 }
 
-.products-gallery > div {
-    width: 100%;
-    height: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    border: 1px solid var(--deep_dark);
-    box-shadow: 5px 5px 10px 1px var(--deep_dark_50_opacity);
-}
-
-.products .a {
-    background-image: url(../images/matcha/product17.jpg);
-}
-.products .b {
-    background-image: url(../images/matcha/product18.jpg);
-}
-.products .c {
-    background-image: url(../images/matcha/product20.jpg);
-}
-.products .d {
-    background-image: url(../images/matcha/product5.jpg);
-}
-.products .e {
-    background-image: url(../images/matcha/product15.jpg);
-}
-.products .f {
-    background-image: url(../images/matcha/product6.jpg);
-}
-.products .g {
-    background-image: url(../images/matcha/product3_1.jpg);
-}
-.products .h {
-    background-image: url(../images/matcha/product9.jpg);
-}
-
-.products-gallery {
+.products .products-gallery {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
@@ -204,11 +171,163 @@ h2 {
     width: max(15vw, 12.5rem);
     height: 18rem;
     flex-grow: 1;
-    /* background-color: var(--deep_dark); */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 1px solid var(--deep_dark);
+    box-shadow: 5px 5px 10px 1px var(--deep_dark_50_opacity);
+    position: relative;
+    top: 0px;
+    overflow: hidden;
+}
+
+.products .container h3,
+.products .container p {
+    color: white;
+    text-shadow: 1px 1px 1px black;
+    position: relative;
+    top: 0px;
+    z-index: 3;
+}
+
+.products .container h3 {
+    font-size: 1.65rem;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 1rem;
+    padding: 0.4rem;
+}
+
+.products .container h3::before,
+.products .container h3::after {
+    content: "";
+    position: absolute;
+    top: 0px;
+    height: 100%;
+} 
+
+.products .container h3::before {
+    left: 5%;
+    width: 90%;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+} 
+
+.products .container h3::after {
+    left: 50%;
+    width: 0%;
+    border-top: 2px solid white;
+    border-bottom: 1px solid white;
+} 
+
+.products .container::after {
+    content: "";
+    position: absolute;
+    top: 0px;
+    width: 20%;
+    margin-left: 40%;
+    height: 100%;
+    background-color: var(--background_black_opacity_40);
+    z-index: 1;
+    opacity: 0;
 }
 
 
+/* image positions fixes */
+.products .e,
+.products .g {
+    background-position: top;
+}
 
+/***************** hover effects *************************/
+
+/* fading background effect */
+.products .container::after {
+    transition: 0.4s ease-in-out;
+}
+
+.products .container:hover::after {
+    width: 100%;
+    margin-left: 0%;
+    opacity: 1;
+}
+
+/* h3 font change */
+.products .container h3 {
+    transition: 0.4s ease-in-out;
+}
+
+.products .container:hover h3 {
+    letter-spacing: 0.2rem;
+}
+
+/* text description <p> apearing in bottom center */
+.products .container p {
+    position: absolute;
+    line-height: 1.4rem;
+    text-align: center;
+    top: 25%;
+    opacity: 0;
+    font-size: 0.2em;
+    width: 40%;
+    margin-left: 30%;
+    transition: 0.4s ease-in-out;
+}
+
+.products .container:hover p {
+    opacity: 1;
+    font-size: 1rem;
+    width: 90%;
+    margin-left: 5%;
+
+}
+
+/* border and shadow color change */
+.products .container {
+    transition: 0.3s 0.3s;
+}
+
+.products .container:hover {
+    border: 1px solid var(--accent_deep_dark);
+    box-shadow: 5px 5px 10px 1px var(--background_staff_opacity_40);
+}
+
+/* top and bottom h3 borders grow from center 2px thick */
+.products .container h3::after {
+    transition: 0.4s ease-in-out;
+} 
+
+.products .container:hover h3::after {
+    left: 5%;
+    width: 90%;
+} 
+
+/********************** image urls *************************/
+
+.products .a {
+    background-image: url(../images/matcha/product16.jpg);
+}
+.products .b {
+    background-image: url(../images/matcha/product18.jpg);
+}
+.products .c {
+    background-image: url(../images/matcha/product20_2.jpg);
+}
+.products .d {
+    background-image: url(../images/matcha/product10.jpg);
+}
+.products .e {
+    background-image: url(../images/matcha/product15.jpg);
+}
+.products .f {
+    background-image: url(../images/matcha/product6.jpg);
+}
+.products .g {
+    background-image: url(../images/matcha/product3_2.jpg);
+}
+.products .h {
+    background-image: url(../images/matcha/product9.jpg);
+}
 
 
 /*   _    ____   ___  _   _ _____ 
@@ -281,20 +400,18 @@ h2 {
 }
 
 
-/*
- ____ _____  _    _____ _____ 
+/*____ _____  _    _____ _____ 
 / ___|_   _|/ \  |  ___|  ___|
 \___ \ | | / _ \ | |_  | |_   
  ___) || |/ ___ \|  _| |  _|  
 |____/ |_/_/   \_\_|   |_|    
-                             
 */
 
 .staff {
     margin-top: 3rem;
 }
 
-.staff-gallery {
+.staff .staff-gallery {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
@@ -302,17 +419,124 @@ h2 {
     padding: 3rem;
 }
 
-.staff-gallery > div {
+.staff .container {
+    border: 1px solid var(--deep_dark);
+    width: 22vw;
+    height: 35rem;
+    flex-grow: 1;
+    position: relative;
+    top: 0px;
+    overflow: hidden;
+}
+
+.staff .image {
     width: 100%;
     height: 100%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    border: 1px solid var(--deep_dark);
-    width: 22vw;
-    height: 35rem;
-    flex-grow: 1;
+    position: relative;
+    top: 0px;
+    overflow: hidden;
 }
+
+.staff .story {
+    margin: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow: hidden;
+    max-width: 22rem;
+}
+
+.staff .story h3,
+.staff .story p {
+    color: white;
+    text-shadow: 1px 1px 1px black;
+    z-index: 3;
+}
+
+.staff .story h3 {
+    font-size: 2rem;
+    font-weight: bold;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+
+
+/* image c (Joe Whitestone) positioning correction */
+.staff .c {
+    background-position: top;
+}
+
+
+/* hoover effects */
+
+/* background colorufade effect */
+.staff .container::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: var(--background_staff_opacity_40);
+    position: absolute;
+    top: 0px;
+    z-index: 1;
+    transition: 0.5s; 
+    opacity: 0;
+}
+
+.staff .container:hover::before {
+    opacity: 1;
+}
+
+/* border color change */
+.staff .container:hover {
+    border: 1px solid var(--accent_deep_dark);
+}
+
+/* background image zoom effect */
+.staff .image {
+    transition: 0.4s;
+    width: 100%;
+}
+
+.staff .container:hover .image{
+    width: 105%;
+}
+
+/* description text move effect */
+.staff .container p {
+    position: relative;
+    top: 0px;
+    left: 150%;
+    transition: 0.5s;
+}
+
+.staff .container:hover p {
+    left: 0px;
+}
+
+/* horizontal line move effect */
+.staff .story h3 {
+    position: relative;
+    top: 0px;
+}
+
+.staff .story h3::after {
+    position: absolute;
+    top: 0px;
+    content: "";
+    width: 100%;
+    height: 100%;
+    border-bottom: 3px solid white;
+    transition: 0.5s;
+    right: 150%;
+}
+
+.staff .container:hover h3::after {
+    right: 0px;
+}
+
 
 .staff .a {
     background-image: url(../images/matcha/staff1.jpg);
@@ -338,6 +562,7 @@ h2 {
         width: 40vw;
     }
 }
+
 
 
 

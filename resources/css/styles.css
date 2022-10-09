@@ -1,6 +1,35 @@
 /* setting colour pallete for whole page */
 :root {
-    --background: #DEF0D7;
+    --background: #f3edee;
+    --background_25opacity: hsla(12 100% 97% / .25);
+    --background_50opacity: hsla(12 100% 97% / .5);
+    --light: #F9AAA0;
+    --dark: #5B0C02;
+    --deep_dark: #210400;
+    --deep_dark_50_opacity: #2104008f;
+    --accent_deep_dark_30_opacity: hsla(79 100% 6% / .3);
+    --accent_deep_dark_40_opacity: hsla(79 100% 6% / .4);
+    --accent_deep_dark_50_opacity: hsla(79 100% 6% / .5);
+    --accent_deep_dark_60_opacity: hsla(79 100% 6% / .6);
+    --accent_deep_dark_70_opacity: hsla(79 100% 6% / .7);
+    --accent_deep_dark_80_opacity: #151f00cb;
+    --accent_very_light: #F5F9EE;
+    --accent_light: #C7E090;
+    --accent_dark: #425F02;
+    --accent_deep_dark: #151F00;
+    --background_black_opacity_40: #0000009a;
+    --background_black_opacity_60: #0000005e;
+    --background_staff_opacity_40: #151a0d71;
+    --background_staff_opacity_60: #f5f9ee98;
+    --white_always: #FFF;
+}
+
+
+/* --background: #FFF3F0; #151f007e */
+
+/*
+:root {
+    --background: #e9f0e6;
     --background_50opacity: #DEF0D780;
     --light: #76B75B;
     --dark: #2D6E12;
@@ -12,7 +41,13 @@
     --background_black_opacity_40: #00000066;
     --background_staff_opacity_40: #5521003f;
     --background_staff_opacity_60: #5521006b;
+    --white_always: #FFF;
 }
+
+*/
+
+
+
 
 html {
     font-size: 16px;
@@ -47,7 +82,8 @@ h2 {
     top: 0px;
     display: flex;
     z-index: 10;
-    background-color: var(--background);
+    background-color: var(--deep_dark);
+    color: var(--accent_very_light)
 }
 
 .nav .container ul{
@@ -55,20 +91,22 @@ h2 {
 }
 
 .nav .logo {
-    padding: 0.3rem 1rem 0.3rem 1rem;
+    padding: 0.5rem 1rem 0.5rem 1rem;
     margin-right: auto;
+    font-size: 1.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .nav .logo-matcha {
-    color: var(--deep_dark);
-    font-size: 1.5rem;
-    font-weight: 800;
+    font-weight: 100;
+    letter-spacing: 0px;
 }
 
 .nav .logo-lovers {
-    color: var(--accent_dark);
-    font-size: 2.2rem;
-    font-weight: 800;
+    font-weight: 700;
+    color: var(--accent_light);
 }
 
 .nav .container li {
@@ -110,15 +148,16 @@ h2 {
 
 .hero h1 {
     position: absolute;
-    top: calc((90vh/2) - ((2.5rem + 1rem + 1rem)/2));
-    background-color: var(--background_50opacity);
+    top: calc((90vh/2) - ((3rem + 1rem + 1rem)/2));
+    background: linear-gradient(90deg, var(--background_black_opacity_60), var(--background_black_opacity_40), var(--background_black_opacity_40), var(--background_black_opacity_60));
+    color: var(--accent_light);
+    font-weight: 700;
     width: 100%;
-    font-size: 2.5rem;
+    font-size: 3rem;
+    text-transform: uppercase;
     padding: 1rem 0;
     text-align: center;
     z-index: 2;
-    border-top: 1px solid gray;
-    border-bottom: 1px solid gray;
 }
 
 .hero-image  {
@@ -150,13 +189,15 @@ h2 {
 .products h2,
 .staff h2 {
     margin-top: 3.5rem;
-    text-transform: capitalize;
+    text-transform: uppercase;
     font-size: 1.6rem;
-    width: 80%;
+    font-weight: 700;
+    color: var(--accent_deep_dark);
+    width: 40%;
     margin-left: auto;
     margin-right: auto;
-    border-top: 1px solid var(--deep_dark);
-    border-bottom: 1px solid var(--deep_dark);
+    border-top: 3px solid var(--white_always);
+    border-bottom: 3px solid var(--white_always);
 }
 
 .products .products-gallery {
@@ -174,8 +215,7 @@ h2 {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    border: 1px solid var(--deep_dark);
-    box-shadow: 5px 5px 10px 1px var(--deep_dark_50_opacity);
+    border: 1px solid var(--white_always);
     position: relative;
     top: 0px;
     overflow: hidden;
@@ -183,8 +223,7 @@ h2 {
 
 .products .container h3,
 .products .container p {
-    color: white;
-    text-shadow: 1px 1px 1px black;
+    color: var(--accent_very_light);
     position: relative;
     top: 0px;
     z-index: 3;
@@ -196,6 +235,7 @@ h2 {
     text-align: center;
     margin-top: 1rem;
     padding: 0.4rem;
+    text-shadow: 1px 1px 1px black;
 }
 
 .products .container h3::before,
@@ -209,25 +249,25 @@ h2 {
 .products .container h3::before {
     left: 5%;
     width: 90%;
-    border-top: 1px solid white;
-    border-bottom: 1px solid white;
+    border-top: 1px solid var(--white_always);
+    border-bottom: 1px solid var(--white_always);
 } 
 
 .products .container h3::after {
     left: 50%;
     width: 0%;
-    border-top: 2px solid white;
-    border-bottom: 1px solid white;
+    border-top: 2px solid var(--white_always);
+    border-bottom: 1px solid var(--white_always);
 } 
 
 .products .container::after {
     content: "";
     position: absolute;
     top: 0px;
-    width: 20%;
-    margin-left: 40%;
+    width: 200%;
+    /* margin-left: 40%; */
     height: 100%;
-    background-color: var(--background_black_opacity_40);
+    background-color: var(--background_staff_opacity_40);
     z-index: 1;
     opacity: 0;
 }
@@ -239,22 +279,29 @@ h2 {
     background-position: top;
 }
 
-/***************** hover effects *************************/
+/*
+ _    _  ______      ________ _____  
+| |  | |/ __ \ \    / /  ____|  __ \ 
+| |__| | |  | \ \  / /| |__  | |__) |
+|  __  | |  | |\ \/ / |  __| |  _  / 
+| |  | | |__| | \  /  | |____| | \ \ 
+|_|  |_|\____/   \/   |______|_|  \_\
+*/                                     
 
 /* fading background effect */
 .products .container::after {
-    transition: 0.4s ease-in-out;
+    transition: opacity 0.4s ease-in-out;
 }
 
 .products .container:hover::after {
-    width: 100%;
-    margin-left: 0%;
+    /* width: 100%;
+    margin-left: 0%; */
     opacity: 1;
 }
 
 /* h3 font change */
 .products .container h3 {
-    transition: 0.4s ease-in-out;
+    transition: letter-spacing 0.4s ease-in-out;
 }
 
 .products .container:hover h3 {
@@ -272,6 +319,7 @@ h2 {
     width: 40%;
     margin-left: 30%;
     transition: 0.4s ease-in-out;
+    transition-property: opacity, font-size, width, margin-left;
 }
 
 .products .container:hover p {
@@ -279,22 +327,12 @@ h2 {
     font-size: 1rem;
     width: 90%;
     margin-left: 5%;
-
-}
-
-/* border and shadow color change */
-.products .container {
-    transition: 0.3s 0.3s;
-}
-
-.products .container:hover {
-    border: 1px solid var(--accent_deep_dark);
-    box-shadow: 5px 5px 10px 1px var(--background_staff_opacity_40);
 }
 
 /* top and bottom h3 borders grow from center 2px thick */
 .products .container h3::after {
     transition: 0.4s ease-in-out;
+    transition-property: left, width;
 } 
 
 .products .container:hover h3::after {
@@ -367,21 +405,21 @@ h2 {
 
 .about h2,
 .about p {
-    color: white;
+    color: var(--accent_very_light);
 }
 
 .about h2 {
     width: 100%;
     text-shadow: 1px 1px 1px black;
-    background-color: var(--background_50opacity);
-    border-top: 1px solid white;
-    border-bottom: 1px solid white;
+    background-color: var(--accent_deep_dark_60_opacity);
+    border-top: 1px solid var(--white_always);
+    border-bottom: 1px solid var(--white_always);
 }
 
 .about h2::before {
     content: "";
     display: block;
-    background-color: white;
+    background-color: var(--accent_very_light);
     width: 100%;
     height: 4rem;
     position: absolute;
@@ -394,9 +432,7 @@ h2 {
     font-size: 1.5rem;
     line-height: 2rem;
     text-align: center;
-    text-shadow: 1px 1px 1px black;
-    background-color: var(--background_black_opacity_40);
-    border-bottom: 1px solid white;
+    background-color: var(--background_black_opacity_60);
 }
 
 
@@ -420,7 +456,7 @@ h2 {
 }
 
 .staff .container {
-    border: 1px solid var(--deep_dark);
+    border: 1px solid var(--white_always);
     width: 22vw;
     height: 35rem;
     flex-grow: 1;
@@ -451,8 +487,7 @@ h2 {
 
 .staff .story h3,
 .staff .story p {
-    color: white;
-    text-shadow: 1px 1px 1px black;
+    color: var(--accent_very_light);
     z-index: 3;
 }
 
@@ -481,7 +516,7 @@ h2 {
     position: absolute;
     top: 0px;
     z-index: 1;
-    transition: 0.5s; 
+    transition: opacity 0.5s; 
     opacity: 0;
 }
 
@@ -489,14 +524,9 @@ h2 {
     opacity: 1;
 }
 
-/* border color change */
-.staff .container:hover {
-    border: 1px solid var(--accent_deep_dark);
-}
-
 /* background image zoom effect */
 .staff .image {
-    transition: 0.4s;
+    transition: width 0.4s;
     width: 100%;
 }
 
@@ -509,7 +539,7 @@ h2 {
     position: relative;
     top: 0px;
     left: 150%;
-    transition: 0.5s;
+    transition: left 0.5s;
 }
 
 .staff .container:hover p {
@@ -528,8 +558,8 @@ h2 {
     content: "";
     width: 100%;
     height: 100%;
-    border-bottom: 3px solid white;
-    transition: 0.5s;
+    border-bottom: 3px solid var(--white_always);
+    transition: right 0.5s;
     right: 150%;
 }
 
@@ -594,28 +624,29 @@ h2 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 2rem;
 }
 
 .locations .container {
     width: max(80%, 22.5rem);
     margin: 0 auto;
     height: 25vh;
-    background-color: var(--background_black_opacity_40);
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
+}
+
+.locations h2,
+.locations li {
+    color: var(--deep_dark);
+}
+
+.locations h2,
+.locations .container {
+    background-color: var(--background_50opacity);
 }
 
 .locations h2 {
     width: max(80%, 22.5rem);
-    font-size: 2.5rem;
+    font-weight: 700;
     text-transform: uppercase;
-    background-color: var(--background_black_opacity_40);
     padding: 1rem 0;
-    color: white;
-    text-shadow: 1px 1px 5px black;
-    border-top: 2px solid black;
-    border-bottom: 2px solid black;
 }
 
 .locations ul {
@@ -629,14 +660,14 @@ h2 {
 
 .locations li {
     font-size: 1.5rem;
-    color: white;
     text-align: center;
-    text-shadow: 1px 1px 1px black;
     padding: 0.5rem;
+    font-weight: 500;
 }
 
 .locations li:first-child {
-    font-size: 2.2rem;
+    font-size: 2rem;
+    font-weight: 700;
 }
 
 /*_____ ___   ___ _____ _____ ____  
@@ -651,6 +682,8 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: flex-end;
+    background-color: var(--deep_dark);
+    color: var(--accent_very_light);
 }
 
 .footer span {
@@ -659,5 +692,5 @@ h2 {
 }
 
 .footer span:first-child {
-    border-right: 2px solid var(--deep_dark);
+    border-right: 2px solid var(--accent_very_light);
 }

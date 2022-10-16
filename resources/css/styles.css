@@ -225,6 +225,9 @@ h2 {
     .hero h1 {
         font-size: 2rem;
     }
+    .hero-image  {
+        background-image: url("../images/matcha/content4_small.jpg");
+    }
 }
 
 
@@ -405,28 +408,28 @@ h2 {
 /********************** image urls *************************/
 
 .products .a {
-    background-image: url(../images/matcha/product16.jpg);
+    background-image: url(../images/matcha/product16_medium.jpg);
 }
 .products .b {
-    background-image: url(../images/matcha/product18.jpg);
+    background-image: url(../images/matcha/product18_medium.jpg);
 }
 .products .c {
-    background-image: url(../images/matcha/product20_2.jpg);
+    background-image: url(../images/matcha/product20_2_medium.jpg);
 }
 .products .d {
-    background-image: url(../images/matcha/product10.jpg);
+    background-image: url(../images/matcha/product10_medium.jpg);
 }
 .products .e {
-    background-image: url(../images/matcha/product15.jpg);
+    background-image: url(../images/matcha/product15_medium.jpg);
 }
 .products .f {
-    background-image: url(../images/matcha/product6.jpg);
+    background-image: url(../images/matcha/product6_medium.jpg);
 }
 .products .g {
-    background-image: url(../images/matcha/product3_2.jpg);
+    background-image: url(../images/matcha/product3_2_medium.jpg);
 }
 .products .h {
-    background-image: url(../images/matcha/product9.jpg);
+    background-image: url(../images/matcha/product9_medium.jpg);
 }
 
 
@@ -615,6 +618,19 @@ h2 {
         gap: 1rem;
         padding: 1rem;
     }
+
+    .staff .a {
+        background-image: url(../images/matcha/staff1_small.jpg);
+    }
+    .staff .b {
+        background-image: url(../images/matcha/staff2_small.jpg);
+    }
+    .staff .c {
+        background-image: url(../images/matcha/staff3_small.jpg);
+    }
+    .staff .d {
+        background-image: url(../images/matcha/staff4_small.jpg);
+    }
 }
 
 @media screen and (max-width: 580px) {
@@ -693,16 +709,16 @@ h2 {
 
 
 .staff .a {
-    background-image: url(../images/matcha/staff1.jpg);
+    background-image: url(../images/matcha/staff1_medium.jpg);
 }
 .staff .b {
-    background-image: url(../images/matcha/staff2.jpg);
+    background-image: url(../images/matcha/staff2_medium.jpg);
 }
 .staff .c {
-    background-image: url(../images/matcha/staff3.jpg);
+    background-image: url(../images/matcha/staff3_medium.jpg);
 }
 .staff .d {
-    background-image: url(../images/matcha/staff4.jpg);
+    background-image: url(../images/matcha/staff4_medium.jpg);
 }
 
 
@@ -777,6 +793,12 @@ h2 {
     font-weight: 700;
 }
 
+@media screen and (min-width: 1400px) {
+    .locations .locations-list {
+        width: 50%;
+    }
+}
+
 @media screen and (max-width: 480px) {
     .locations .locations-list {
         width: 100%;
@@ -792,6 +814,11 @@ h2 {
         padding: 0.3rem;
         font-weight: 400;
     }
+
+    .locations .image {
+        background-image: url(../images/matcha/conetnt2_small.jpg);
+    }
+    
 }
 
 /*_____ ___   ___ _____ _____ ____  
